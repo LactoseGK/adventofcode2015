@@ -37,60 +37,20 @@ class Day09VC: AoCVC, AdventDay {
             let distance = Int(split[4])!
             self.locations.insert(locA)
             self.locations.insert(locB)
-            
-            let sorted = [locA, locB].sorted()
-            let key = "\(sorted[0])-\(sorted[1])"
-            self.distances[key] = distance
+            self.distances["\(locA)-\(locB)"] = distance
+            self.distances["\(locB)-\(locA)"] = distance
         }
-    }
-    
-    private func findShortestDistance() -> Int {
-        var shortest = Int.max
-        for permutation in PermutationHelper.allPermutations(Array(self.locations)) {
-            var currDistance = 0
-            for i in 0..<permutation.count - 1 {
-                let locA = permutation[i]
-                let locB = permutation[i + 1]
-                let sorted = [locA, locB].sorted()
-                let key = "\(sorted[0])-\(sorted[1])"
-                let distance = self.distances[key]!
-                currDistance += distance
-                
-                if currDistance > shortest {
-                    break
-                }
-            }
-            shortest = min(shortest, currDistance)
-        }
-    
-        return shortest
-    }
-    
-    private func findLongestDistance() -> Int {
-        var longest = 0
-        for permutation in PermutationHelper.allPermutations(Array(self.locations)) {
-            var currDistance = 0
-            for i in 0..<permutation.count - 1 {
-                let locA = permutation[i]
-                let locB = permutation[i + 1]
-                let sorted = [locA, locB].sorted()
-                let key = "\(sorted[0])-\(sorted[1])"
-                let distance = self.distances[key]!
-                currDistance += distance
-            }
-            longest = max(longest, currDistance)
-        }
-    
-        return longest
     }
     
     func solveFirst() {
-        let shortestPathDistance = self.findShortestDistance()
+        let permutations = PermutationHelper.allPermutations(Array(self.locations))
+        let shortestPathDistance = TravellingSalesmanHelper.findShortestDistance(locationPermutations: permutations, distanceMap: self.distances)
         self.setSolution(challenge: 0, text: "\(shortestPathDistance)")
     }
     
     func solveSecond() {
-        let longestPathDistance = self.findLongestDistance()
+        let permutations = PermutationHelper.allPermutations(Array(self.locations))
+        let longestPathDistance = TravellingSalesmanHelper.findLongestDistance(locationPermutations: permutations, distanceMap: self.distances)
         self.setSolution(challenge: 1, text: "\(longestPathDistance)")
     }
 }

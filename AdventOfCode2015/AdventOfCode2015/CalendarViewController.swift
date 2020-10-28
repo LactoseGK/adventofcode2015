@@ -20,13 +20,14 @@ class CalendarViewController: UIViewController {
                                                          3 : Day03VC(),
                                                          4 : Day04VC(),
                                                          5 : Day05VC(),
-                                                         6 : Day06VC()
+                                                         6 : Day06VC(),
+                                                         7 : Day07VC()
     ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Advent of Code 2020"
+        self.title = "Advent of Code 2015"
         
         self.configureStackViews()
         self.configureButtons()

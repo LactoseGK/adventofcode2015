@@ -17,8 +17,8 @@ class Day09VC: AoCVC, AdventDay {
     
     func loadInput() {
         self.input = self.defaultInputFileString.loadAsTextLines()
-        self.generatePaths(from: self.input)
 //        self.runTests()
+        self.generatePaths(from: self.input)
     }
     
     private func runTests() {
@@ -27,6 +27,15 @@ class Day09VC: AoCVC, AdventDay {
                          "Dublin to Belfast = 141"]
         
         self.generatePaths(from: testInput)
+        let permutations = PermutationHelper.allPermutations(Array(self.locations))
+        let distances = TravellingSalesmanHelper.findDistances(locationPermutations: permutations, distanceMap: self.distances)
+        assert(distances.shortest == 605)
+        assert(distances.longest == 982)
+        
+        self.locations = []
+        self.distances = [:]
+        
+        print("All tests OK.")
     }
     
     private func generatePaths(from strings: [String]) {

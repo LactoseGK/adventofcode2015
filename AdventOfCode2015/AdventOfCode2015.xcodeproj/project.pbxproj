@@ -40,6 +40,9 @@
 		04B17C172549DD0500FE3DB5 /* Day07Input.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04B17C162549DD0500FE3DB5 /* Day07Input.txt */; };
 		04B17C1A254A000700FE3DB5 /* Day08VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B17C19254A000700FE3DB5 /* Day08VC.swift */; };
 		04B17C1C254A06FF00FE3DB5 /* Day08Input.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04B17C1B254A06FF00FE3DB5 /* Day08Input.txt */; };
+		04B17C1F254A181800FE3DB5 /* Day09VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B17C1E254A181800FE3DB5 /* Day09VC.swift */; };
+		04B17C21254A199100FE3DB5 /* Day09Input.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04B17C20254A199100FE3DB5 /* Day09Input.txt */; };
+		04B17C23254A1C8C00FE3DB5 /* PermutationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B17C22254A1C8C00FE3DB5 /* PermutationHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +81,9 @@
 		04B17C162549DD0500FE3DB5 /* Day07Input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Day07Input.txt; sourceTree = "<group>"; };
 		04B17C19254A000700FE3DB5 /* Day08VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day08VC.swift; sourceTree = "<group>"; };
 		04B17C1B254A06FF00FE3DB5 /* Day08Input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Day08Input.txt; sourceTree = "<group>"; };
+		04B17C1E254A181800FE3DB5 /* Day09VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day09VC.swift; sourceTree = "<group>"; };
+		04B17C20254A199100FE3DB5 /* Day09Input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Day09Input.txt; sourceTree = "<group>"; };
+		04B17C22254A1C8C00FE3DB5 /* PermutationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermutationHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +144,7 @@
 				04B17BE42548739E00FE3DB5 /* Node.swift */,
 				04B17BE52548739E00FE3DB5 /* UIView+Ext.swift */,
 				04B17BE62548739E00FE3DB5 /* Direction.swift */,
+				04B17C22254A1C8C00FE3DB5 /* PermutationHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -153,6 +160,7 @@
 				04B17C0E254894DF00FE3DB5 /* Day06 */,
 				04B17C132549CF6000FE3DB5 /* Day07 */,
 				04B17C182549FFE700FE3DB5 /* Day08 */,
+				04B17C1D254A180400FE3DB5 /* Day09 */,
 			);
 			path = Days;
 			sourceTree = "<group>";
@@ -228,6 +236,15 @@
 			path = Day08;
 			sourceTree = "<group>";
 		};
+		04B17C1D254A180400FE3DB5 /* Day09 */ = {
+			isa = PBXGroup;
+			children = (
+				04B17C1E254A181800FE3DB5 /* Day09VC.swift */,
+				04B17C20254A199100FE3DB5 /* Day09Input.txt */,
+			);
+			path = Day09;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -293,6 +310,7 @@
 				04B17C1C254A06FF00FE3DB5 /* Day08Input.txt in Resources */,
 				04B17C172549DD0500FE3DB5 /* Day07Input.txt in Resources */,
 				04B17BCA2548736200FE3DB5 /* Main.storyboard in Resources */,
+				04B17C21254A199100FE3DB5 /* Day09Input.txt in Resources */,
 				04B17BFA2548772500FE3DB5 /* Day01Input.txt in Resources */,
 				04B17C052548855300FE3DB5 /* Day03Input.txt in Resources */,
 				04B17C0D2548915000FE3DB5 /* Day05Input.txt in Resources */,
@@ -308,12 +326,14 @@
 			files = (
 				04B17C082548885200FE3DB5 /* Day04VC.swift in Sources */,
 				04B17BF82548743E00FE3DB5 /* Day01VC.swift in Sources */,
+				04B17C23254A1C8C00FE3DB5 /* PermutationHelper.swift in Sources */,
 				04B17C152549CF9300FE3DB5 /* Day07VC.swift in Sources */,
 				04B17C1A254A000700FE3DB5 /* Day08VC.swift in Sources */,
 				04B17BD72548738300FE3DB5 /* CalendarViewController.swift in Sources */,
 				04B17BED2548739E00FE3DB5 /* IntImage.swift in Sources */,
 				04B17C0B25488D6D00FE3DB5 /* Day05VC.swift in Sources */,
 				04B17BC32548736200FE3DB5 /* AppDelegate.swift in Sources */,
+				04B17C1F254A181800FE3DB5 /* Day09VC.swift in Sources */,
 				04B17BEA2548739E00FE3DB5 /* FileLoader.swift in Sources */,
 				04B17C102548951400FE3DB5 /* Day06VC.swift in Sources */,
 				04B17BF12548739E00FE3DB5 /* UIView+Ext.swift in Sources */,

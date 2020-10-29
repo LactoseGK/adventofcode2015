@@ -48,6 +48,8 @@
 		04B17C2B254B49C100FE3DB5 /* Day11VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B17C2A254B49C100FE3DB5 /* Day11VC.swift */; };
 		04B17C2E254B595E00FE3DB5 /* Day12VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B17C2D254B595E00FE3DB5 /* Day12VC.swift */; };
 		04B17C30254B5E2300FE3DB5 /* Day12Input.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04B17C2F254B5E2300FE3DB5 /* Day12Input.txt */; };
+		04B17C33254B62E100FE3DB5 /* Day13VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B17C32254B62E100FE3DB5 /* Day13VC.swift */; };
+		04B17C35254B65F300FE3DB5 /* Day13Input.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04B17C34254B65F200FE3DB5 /* Day13Input.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +96,8 @@
 		04B17C2A254B49C100FE3DB5 /* Day11VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day11VC.swift; sourceTree = "<group>"; };
 		04B17C2D254B595E00FE3DB5 /* Day12VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day12VC.swift; sourceTree = "<group>"; };
 		04B17C2F254B5E2300FE3DB5 /* Day12Input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Day12Input.txt; sourceTree = "<group>"; };
+		04B17C32254B62E100FE3DB5 /* Day13VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day13VC.swift; sourceTree = "<group>"; };
+		04B17C34254B65F200FE3DB5 /* Day13Input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Day13Input.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +179,7 @@
 				04B17C26254B3DEE00FE3DB5 /* Day10 */,
 				04B17C29254B498A00FE3DB5 /* Day11 */,
 				04B17C2C254B594600FE3DB5 /* Day12 */,
+				04B17C31254B62C700FE3DB5 /* Day13 */,
 			);
 			path = Days;
 			sourceTree = "<group>";
@@ -284,6 +289,15 @@
 			path = Day12;
 			sourceTree = "<group>";
 		};
+		04B17C31254B62C700FE3DB5 /* Day13 */ = {
+			isa = PBXGroup;
+			children = (
+				04B17C32254B62E100FE3DB5 /* Day13VC.swift */,
+				04B17C34254B65F200FE3DB5 /* Day13Input.txt */,
+			);
+			path = Day13;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -350,6 +364,7 @@
 				04B17C30254B5E2300FE3DB5 /* Day12Input.txt in Resources */,
 				04B17C172549DD0500FE3DB5 /* Day07Input.txt in Resources */,
 				04B17BCA2548736200FE3DB5 /* Main.storyboard in Resources */,
+				04B17C35254B65F300FE3DB5 /* Day13Input.txt in Resources */,
 				04B17C21254A199100FE3DB5 /* Day09Input.txt in Resources */,
 				04B17BFA2548772500FE3DB5 /* Day01Input.txt in Resources */,
 				04B17C052548855300FE3DB5 /* Day03Input.txt in Resources */,
@@ -385,6 +400,7 @@
 				04B17C2B254B49C100FE3DB5 /* Day11VC.swift in Sources */,
 				04B17BF22548739E00FE3DB5 /* Direction.swift in Sources */,
 				04B17C03254881DC00FE3DB5 /* Day03VC.swift in Sources */,
+				04B17C33254B62E100FE3DB5 /* Day13VC.swift in Sources */,
 				04B17BE82548739E00FE3DB5 /* IntPoint.swift in Sources */,
 				04B17BE92548739E00FE3DB5 /* Misc.swift in Sources */,
 				04B17BC52548736200FE3DB5 /* SceneDelegate.swift in Sources */,

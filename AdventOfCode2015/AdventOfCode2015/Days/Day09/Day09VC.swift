@@ -28,9 +28,9 @@ class Day09VC: AoCVC, AdventDay {
         
         self.generatePaths(from: testInput)
         let permutations = PermutationHelper.allPermutations(Array(self.locations))
-        let distances = TravellingSalesmanHelper.findDistances(locationPermutations: permutations, distanceMap: self.distances)
-        assert(distances.shortest == 605)
-        assert(distances.longest == 982)
+        let result = TravellingSalesmanHelper.findDistances(locationPermutations: permutations, distanceMap: self.distances)
+        assert(result.shortestDistance == 605)
+        assert(result.longestDistance == 982)
         
         self.locations = []
         self.distances = [:]
@@ -53,13 +53,15 @@ class Day09VC: AoCVC, AdventDay {
     
     func solveFirst() {
         let permutations = PermutationHelper.allPermutations(Array(self.locations))
-        let shortestPathDistance = TravellingSalesmanHelper.findShortestDistance(locationPermutations: permutations, distanceMap: self.distances)
-        self.setSolution(challenge: 0, text: "\(shortestPathDistance)")
+        let result = TravellingSalesmanHelper.findShortestDistance(locationPermutations: permutations, distanceMap: self.distances)
+        let shortestDistance = result.shortestDistance!
+        self.setSolution(challenge: 0, text: "\(shortestDistance)")
     }
     
     func solveSecond() {
         let permutations = PermutationHelper.allPermutations(Array(self.locations))
-        let longestPathDistance = TravellingSalesmanHelper.findLongestDistance(locationPermutations: permutations, distanceMap: self.distances)
-        self.setSolution(challenge: 1, text: "\(longestPathDistance)")
+        let result = TravellingSalesmanHelper.findLongestDistance(locationPermutations: permutations, distanceMap: self.distances)
+        let longestDistance = result.longestDistance!
+        self.setSolution(challenge: 1, text: "\(longestDistance)")
     }
 }

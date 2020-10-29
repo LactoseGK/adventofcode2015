@@ -11,15 +11,13 @@ import UIKit
 class Day10VC: AoCVC, AdventDay {
     
     func loadInput() {
-        self.runTests()
     }
     
-    private func runTests() {
+    func runTests() {
         let tests = ["211",
                      "111"]
         let results = tests.map({self.lookAndSay($0)})
         assert(results == ["1221", "31"])
-        print("All tests OK.")
     }
     
     private func lookAndSay(_ string: String) -> String {

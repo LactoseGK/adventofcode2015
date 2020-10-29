@@ -15,10 +15,9 @@ class Day03VC: AoCVC, AdventDay {
     
     func loadInput() {
         self.input = self.defaultInputFileString.loadAsTextFirstLine()
-//        self.runTests()
     }
     
-    private func runTests() {
+    func runTests() {
         self.deliverToHouses(directionString: ">")
         assert(self.giftDictionary.count == 2)
         
@@ -37,8 +36,6 @@ class Day03VC: AoCVC, AdventDay {
         
         self.deliverToHouses(directionString: "^v^v^v^v^v", roboSantaActive: true)
         assert(self.giftDictionary.count == 11)
-        
-        print("All tests OK.")
     }
     
     

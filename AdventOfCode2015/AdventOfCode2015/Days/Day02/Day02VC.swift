@@ -49,16 +49,14 @@ class Day02VC: AoCVC, AdventDay {
     func loadInput() {
         self.input = self.defaultInputFileString.loadAsTextLines()
         self.boxes = self.input.map(Box.fromString)
-//        self.runTests()
     }
     
-    private func runTests() {
+    func runTests() {
         assert(Box(width: 2, height: 3, length: 4).surfaceAreaWithPadding == 58)
         assert(Box(width: 1, height: 1, length: 10).surfaceAreaWithPadding == 43)
         
         assert(Box(width: 2, height: 3, length: 4).ribbonRequirements == 34)
         assert(Box(width: 1, height: 1, length: 10).ribbonRequirements == 14)
-        print("All tests OK.")
     }
     
     func solveFirst() {

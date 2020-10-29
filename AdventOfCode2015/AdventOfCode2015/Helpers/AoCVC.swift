@@ -9,6 +9,7 @@ import UIKit
 
 protocol AdventDay {
     func loadInput()
+    func runTests()
     func solveFirst()
     func solveSecond()
 }
@@ -53,6 +54,7 @@ class AoCVC: UIViewController {
         
         if !self.hasAppeared {
             self.loadInput()
+            self.runTests()
             self.enableButtons()
             self.hasAppeared = true
         }
@@ -88,7 +90,13 @@ class AoCVC: UIViewController {
     private func loadInput() {
         let loadTime = Date()
         self.adventDay.loadInput()
-        print("\(self.title!) input loaded in \(DateHelper.getElapsedTimeString(from: loadTime))")
+        print("\(self.title!): Input loaded. \(DateHelper.getElapsedTimeString(from: loadTime))")
+    }
+    
+    private func runTests() {
+        let testTime = Date()
+        self.adventDay.runTests()
+        print("\(self.title!): Tests OK. \(DateHelper.getElapsedTimeString(from: testTime))")
     }
 
     func setSolution(challenge: Int, text: String) {

@@ -46,6 +46,8 @@
 		04B17C25254A242600FE3DB5 /* TravellingSalesmanHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B17C24254A242600FE3DB5 /* TravellingSalesmanHelper.swift */; };
 		04B17C28254B3E0300FE3DB5 /* Day10VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B17C27254B3E0300FE3DB5 /* Day10VC.swift */; };
 		04B17C2B254B49C100FE3DB5 /* Day11VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B17C2A254B49C100FE3DB5 /* Day11VC.swift */; };
+		04B17C2E254B595E00FE3DB5 /* Day12VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B17C2D254B595E00FE3DB5 /* Day12VC.swift */; };
+		04B17C30254B5E2300FE3DB5 /* Day12Input.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04B17C2F254B5E2300FE3DB5 /* Day12Input.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +92,8 @@
 		04B17C24254A242600FE3DB5 /* TravellingSalesmanHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravellingSalesmanHelper.swift; sourceTree = "<group>"; };
 		04B17C27254B3E0300FE3DB5 /* Day10VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day10VC.swift; sourceTree = "<group>"; };
 		04B17C2A254B49C100FE3DB5 /* Day11VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day11VC.swift; sourceTree = "<group>"; };
+		04B17C2D254B595E00FE3DB5 /* Day12VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day12VC.swift; sourceTree = "<group>"; };
+		04B17C2F254B5E2300FE3DB5 /* Day12Input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Day12Input.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +174,7 @@
 				04B17C1D254A180400FE3DB5 /* Day09 */,
 				04B17C26254B3DEE00FE3DB5 /* Day10 */,
 				04B17C29254B498A00FE3DB5 /* Day11 */,
+				04B17C2C254B594600FE3DB5 /* Day12 */,
 			);
 			path = Days;
 			sourceTree = "<group>";
@@ -270,6 +275,15 @@
 			path = Day11;
 			sourceTree = "<group>";
 		};
+		04B17C2C254B594600FE3DB5 /* Day12 */ = {
+			isa = PBXGroup;
+			children = (
+				04B17C2D254B595E00FE3DB5 /* Day12VC.swift */,
+				04B17C2F254B5E2300FE3DB5 /* Day12Input.txt */,
+			);
+			path = Day12;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -333,6 +347,7 @@
 				04B17C0025487B4900FE3DB5 /* Day02Input.txt in Resources */,
 				04B17BCC2548736400FE3DB5 /* Assets.xcassets in Resources */,
 				04B17C1C254A06FF00FE3DB5 /* Day08Input.txt in Resources */,
+				04B17C30254B5E2300FE3DB5 /* Day12Input.txt in Resources */,
 				04B17C172549DD0500FE3DB5 /* Day07Input.txt in Resources */,
 				04B17BCA2548736200FE3DB5 /* Main.storyboard in Resources */,
 				04B17C21254A199100FE3DB5 /* Day09Input.txt in Resources */,
@@ -352,6 +367,7 @@
 				04B17C082548885200FE3DB5 /* Day04VC.swift in Sources */,
 				04B17BF82548743E00FE3DB5 /* Day01VC.swift in Sources */,
 				04B17C23254A1C8C00FE3DB5 /* PermutationHelper.swift in Sources */,
+				04B17C2E254B595E00FE3DB5 /* Day12VC.swift in Sources */,
 				04B17C152549CF9300FE3DB5 /* Day07VC.swift in Sources */,
 				04B17C1A254A000700FE3DB5 /* Day08VC.swift in Sources */,
 				04B17BD72548738300FE3DB5 /* CalendarViewController.swift in Sources */,

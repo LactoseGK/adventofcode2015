@@ -13,10 +13,9 @@ class Day08VC: AoCVC, AdventDay {
     
     func loadInput() {
         self.input = self.defaultInputFileString.loadAsTextLines()
-//        self.runTests()
     }
     
-    private func runTests() {
+    func runTests() {
         let tests = [
             self.input[1],
             self.input[10],
@@ -33,8 +32,6 @@ class Day08VC: AoCVC, AdventDay {
         
         let charsInString = tests.map({self.countCharactersInString(for: $0)})
         assert(charsInString == [4, 8, 1, 8, 23, 2, 31, 17, 26])
-        
-        print("All tests OK.")
     }
     
     private func countAmountOfCharactersInCode(for string: String) -> Int {

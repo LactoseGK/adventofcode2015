@@ -13,7 +13,6 @@ class Day05VC: AoCVC, AdventDay {
     
     func loadInput() {
         self.input = self.defaultInputFileString.loadAsTextLines()
-//        self.runTests()
     }
     
     enum WordType {
@@ -21,7 +20,7 @@ class Day05VC: AoCVC, AdventDay {
         case nice
     }
     
-    private func runTests() {
+    func runTests() {
         assert(self.checkWord("ugknbfddgicrmopn") == .nice)
         assert(self.checkWord("aaa") == .nice)
         assert(self.checkWord("jchzalrnumimnmhp") == .naughty)
@@ -33,8 +32,6 @@ class Day05VC: AoCVC, AdventDay {
         assert(self.checkWord2("xxyxx") == .nice)
         assert(self.checkWord2("uurcxstgmygtbstg") == .naughty)
         assert(self.checkWord2("ieodomkazucvgmuy") == .naughty)
-        
-        print("All tests OK.")
     }
     
 

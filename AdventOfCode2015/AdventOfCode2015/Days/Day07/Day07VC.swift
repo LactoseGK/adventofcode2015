@@ -28,10 +28,9 @@ class Day07VC: AoCVC, AdventDay {
     
     func loadInput() {
         self.input = self.defaultInputFileString.loadAsTextLines()
-        self.runTests()
     }
     
-    private func runTests() {
+    func runTests() {
         let tests = [
             "123 -> x",
             "456 -> y",
@@ -60,8 +59,6 @@ class Day07VC: AoCVC, AdventDay {
         let values2 = ["d", "c", "b", "a"].map({self.evaluate(wire: $0, in: instructions2)})
         self.wires.removeAll()
         assert(values2 == [43690, 21845, 0, 65535])
-        
-        print("All tests OK.")
     }
     
     private func parse(_ string: String) -> Instruction {

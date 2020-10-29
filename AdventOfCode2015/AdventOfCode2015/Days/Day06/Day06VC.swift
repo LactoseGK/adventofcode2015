@@ -25,7 +25,6 @@ class Day06VC: AoCVC, AdventDay {
             lightGrid2[point] = 0
         }
         self.input = self.defaultInputFileString.loadAsTextLines()
-//        self.runTests()
     }
     
     func runTests() {

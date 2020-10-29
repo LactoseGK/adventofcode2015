@@ -14,7 +14,6 @@ class Day11VC: AoCVC, AdventDay {
     
     func loadInput() {
         self.generateCharMap()
-        self.runTests()
     }
     
     private func generateCharMap() {
@@ -25,7 +24,7 @@ class Day11VC: AoCVC, AdventDay {
         }
     }
     
-    private func runTests() {
+    func runTests() {
         let testsA = ["xx", "xy", "xz", "ya"].map({self.nextPasswordAttempt(from: $0)})
         assert(testsA == ["xy", "xz", "ya", "yb"])
         
@@ -39,8 +38,6 @@ class Day11VC: AoCVC, AdventDay {
         
         assert(self.nextValidPassword(from: "abcdefgh") == "abcdffaa")
         assert(self.nextValidPassword(from: "ghijklmn") == "ghjaabcc")
-        
-        print("All tests OK.")
     }
     
     private func testAscendingCharacters(password: String) -> Bool {

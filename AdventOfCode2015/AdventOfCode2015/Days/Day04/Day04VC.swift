@@ -13,14 +13,11 @@ class Day04VC: AoCVC, AdventDay {
     private var input = "yzbqklnj"
     
     func loadInput() {
-//        self.runTests()
     }
     
-    private func runTests() {
+    func runTests() {
         assert(self.findFirstMD5(for: "abcdef", strict: false) == 609043)
         assert(self.findFirstMD5(for: "pqrstuv", strict: false) == 1048970)
-        
-        print("All tests OK.")
     }
     
     private func findFirstMD5(for key: String, strict: Bool) -> Int {

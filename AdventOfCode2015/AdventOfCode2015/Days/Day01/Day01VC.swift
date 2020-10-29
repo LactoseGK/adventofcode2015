@@ -13,10 +13,9 @@ class Day01VC: AoCVC, AdventDay {
     
     func loadInput() {
         self.input = self.defaultInputFileString.loadAsTextFirstLine()
-//        self.runTests()
     }
     
-    private func runTests() {
+    func runTests() {
         assert(self.calculateFloor(for: "(())") == 0)
         assert(self.calculateFloor(for: "()()") == 0)
         assert(self.calculateFloor(for: "(((") == 3)
@@ -26,7 +25,6 @@ class Day01VC: AoCVC, AdventDay {
         assert(self.calculateFloor(for: "))(") == -1)
         assert(self.calculateFloor(for: ")))") == -3)
         assert(self.calculateFloor(for: ")())())") == -3)
-        print("All tests OK.")
     }
     
     func solveFirst() {

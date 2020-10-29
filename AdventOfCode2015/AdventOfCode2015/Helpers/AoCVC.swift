@@ -19,6 +19,14 @@ class AoCVC: UIViewController {
 
     private var solutionStartTimes: [Date] = []
     
+    required init() {
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     // DayXXInput
     var defaultInputFileString: String {
         return self.title!.appending("Input").replacingOccurrences(of: " ", with: "")

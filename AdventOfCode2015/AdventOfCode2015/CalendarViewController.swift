@@ -15,15 +15,16 @@ class CalendarViewController: UIViewController {
     private let horizontalSpacing: CGFloat = 16
     
     //Days start at 1, not 0.
-    private var calendarDays: [Int: UIViewController] = [1 : Day01VC(),
-                                                         2 : Day02VC(),
-                                                         3 : Day03VC(),
-                                                         4 : Day04VC(),
-                                                         5 : Day05VC(),
-                                                         6 : Day06VC(),
-                                                         7 : Day07VC(),
-                                                         8 : Day08VC(),
-                                                         9 : Day09VC()
+    private var calendarDays: [Int: AoCVC.Type] = [1 : Day01VC.self,
+                                                   2 : Day02VC.self,
+                                                   3 : Day03VC.self,
+                                                   4 : Day04VC.self,
+                                                   5 : Day05VC.self,
+                                                   6 : Day06VC.self,
+                                                   7 : Day07VC.self,
+                                                   8 : Day08VC.self,
+                                                   9 : Day09VC.self,
+                                                   10 : Day10VC.self
     ]
     
     override func viewDidLoad() {
@@ -82,10 +83,10 @@ class CalendarViewController: UIViewController {
     }
     
     @objc private func buttonTapped(sender: UIButton) {
-        if let vc = self.calendarDays[sender.tag] {
-            vc.modalPresentationStyle = .overFullScreen
-            vc.title = String(format: "Day %02d", sender.tag)
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
+        guard let vcType = self.calendarDays[sender.tag] else { fatalError("Invalid VC.") }
+        let vc = vcType.init()
+        vc.modalPresentationStyle = .overFullScreen
+        vc.title = String(format: "Day %02d", sender.tag)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

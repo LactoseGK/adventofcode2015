@@ -44,6 +44,7 @@
 		04B17C21254A199100FE3DB5 /* Day09Input.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04B17C20254A199100FE3DB5 /* Day09Input.txt */; };
 		04B17C23254A1C8C00FE3DB5 /* PermutationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B17C22254A1C8C00FE3DB5 /* PermutationHelper.swift */; };
 		04B17C25254A242600FE3DB5 /* TravellingSalesmanHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B17C24254A242600FE3DB5 /* TravellingSalesmanHelper.swift */; };
+		04B17C28254B3E0300FE3DB5 /* Day10VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B17C27254B3E0300FE3DB5 /* Day10VC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 		04B17C20254A199100FE3DB5 /* Day09Input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Day09Input.txt; sourceTree = "<group>"; };
 		04B17C22254A1C8C00FE3DB5 /* PermutationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermutationHelper.swift; sourceTree = "<group>"; };
 		04B17C24254A242600FE3DB5 /* TravellingSalesmanHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravellingSalesmanHelper.swift; sourceTree = "<group>"; };
+		04B17C27254B3E0300FE3DB5 /* Day10VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day10VC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 				04B17C132549CF6000FE3DB5 /* Day07 */,
 				04B17C182549FFE700FE3DB5 /* Day08 */,
 				04B17C1D254A180400FE3DB5 /* Day09 */,
+				04B17C26254B3DEE00FE3DB5 /* Day10 */,
 			);
 			path = Days;
 			sourceTree = "<group>";
@@ -246,6 +249,14 @@
 				04B17C20254A199100FE3DB5 /* Day09Input.txt */,
 			);
 			path = Day09;
+			sourceTree = "<group>";
+		};
+		04B17C26254B3DEE00FE3DB5 /* Day10 */ = {
+			isa = PBXGroup;
+			children = (
+				04B17C27254B3E0300FE3DB5 /* Day10VC.swift */,
+			);
+			path = Day10;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,6 +361,7 @@
 				04B17BE92548739E00FE3DB5 /* Misc.swift in Sources */,
 				04B17BC52548736200FE3DB5 /* SceneDelegate.swift in Sources */,
 				04B17BFE25487AF800FE3DB5 /* Day02VC.swift in Sources */,
+				04B17C28254B3E0300FE3DB5 /* Day10VC.swift in Sources */,
 				04B17BEF2548739E00FE3DB5 /* DateHelper.swift in Sources */,
 				04B17BEB2548739E00FE3DB5 /* String+Ext.swift in Sources */,
 				04B17BE72548739E00FE3DB5 /* Math.swift in Sources */,

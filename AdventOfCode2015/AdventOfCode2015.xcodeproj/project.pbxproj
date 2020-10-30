@@ -54,6 +54,8 @@
 		04B17C3A254B6E5B00FE3DB5 /* Day14Input.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04B17C39254B6E5B00FE3DB5 /* Day14Input.txt */; };
 		04B17C3D254B760C00FE3DB5 /* Day15VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B17C3C254B760C00FE3DB5 /* Day15VC.swift */; };
 		04B17C3F254B7AF300FE3DB5 /* Day15Input.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04B17C3E254B7AF200FE3DB5 /* Day15Input.txt */; };
+		04B17C42254B8DDC00FE3DB5 /* Day16VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B17C41254B8DDC00FE3DB5 /* Day16VC.swift */; };
+		04B17C44254B8E1300FE3DB5 /* Day16Input.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04B17C43254B8E1300FE3DB5 /* Day16Input.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +108,8 @@
 		04B17C39254B6E5B00FE3DB5 /* Day14Input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Day14Input.txt; sourceTree = "<group>"; };
 		04B17C3C254B760C00FE3DB5 /* Day15VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day15VC.swift; sourceTree = "<group>"; };
 		04B17C3E254B7AF200FE3DB5 /* Day15Input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Day15Input.txt; sourceTree = "<group>"; };
+		04B17C41254B8DDC00FE3DB5 /* Day16VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day16VC.swift; sourceTree = "<group>"; };
+		04B17C43254B8E1300FE3DB5 /* Day16Input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Day16Input.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +194,7 @@
 				04B17C31254B62C700FE3DB5 /* Day13 */,
 				04B17C36254B6B6400FE3DB5 /* Day14 */,
 				04B17C3B254B75F600FE3DB5 /* Day15 */,
+				04B17C40254B8DCA00FE3DB5 /* Day16 */,
 			);
 			path = Days;
 			sourceTree = "<group>";
@@ -326,6 +331,15 @@
 			path = Day15;
 			sourceTree = "<group>";
 		};
+		04B17C40254B8DCA00FE3DB5 /* Day16 */ = {
+			isa = PBXGroup;
+			children = (
+				04B17C41254B8DDC00FE3DB5 /* Day16VC.swift */,
+				04B17C43254B8E1300FE3DB5 /* Day16Input.txt */,
+			);
+			path = Day16;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -385,6 +399,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04B17C122548970600FE3DB5 /* Day06Input.txt in Resources */,
+				04B17C44254B8E1300FE3DB5 /* Day16Input.txt in Resources */,
 				04B17BCF2548736400FE3DB5 /* LaunchScreen.storyboard in Resources */,
 				04B17C0025487B4900FE3DB5 /* Day02Input.txt in Resources */,
 				04B17BCC2548736400FE3DB5 /* Assets.xcassets in Resources */,
@@ -421,6 +436,7 @@
 				04B17C0B25488D6D00FE3DB5 /* Day05VC.swift in Sources */,
 				04B17BC32548736200FE3DB5 /* AppDelegate.swift in Sources */,
 				04B17C25254A242600FE3DB5 /* TravellingSalesmanHelper.swift in Sources */,
+				04B17C42254B8DDC00FE3DB5 /* Day16VC.swift in Sources */,
 				04B17C1F254A181800FE3DB5 /* Day09VC.swift in Sources */,
 				04B17BEA2548739E00FE3DB5 /* FileLoader.swift in Sources */,
 				04B17C102548951400FE3DB5 /* Day06VC.swift in Sources */,

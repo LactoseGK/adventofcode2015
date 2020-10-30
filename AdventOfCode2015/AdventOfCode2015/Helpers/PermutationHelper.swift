@@ -9,6 +9,7 @@
 import Foundation
 
 class PermutationHelper {
+    /// Results always include all elements.
     static func allPermutations<T>(_ elements: [T]) -> [[T]] {
         if elements.count == 1 { return [elements] }
         var allResults: [[T]] = []
@@ -24,5 +25,11 @@ class PermutationHelper {
             allResults += p
         }
         return allResults
+    }
+    
+    /// Results include partial list of elements.
+    static func allCombinations<T>(_ elements: [T]) -> [[T]] {
+        guard !elements.isEmpty else { return [[]] }
+        return allCombinations(Array(elements[1...])).flatMap({[$0, [elements[0]] + $0]})
     }
 }

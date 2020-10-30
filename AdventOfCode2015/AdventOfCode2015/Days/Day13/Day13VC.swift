@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Day13VC: AoCVC, AdventDay {
+class Day13VC: AoCVC, AdventDay, InputLoadable {
     private var input: [String] = []
     
     private var happinessMap: [String : Int] = [:] //Name-Name --> Happiness
@@ -16,32 +16,6 @@ class Day13VC: AoCVC, AdventDay {
     
     func loadInput() {
         self.input = self.defaultInputFileString.loadAsTextLines()
-    }
-    
-    func runTests() {
-        let testInput = """
-Alice would gain 54 happiness units by sitting next to Bob.
-Alice would lose 79 happiness units by sitting next to Carol.
-Alice would lose 2 happiness units by sitting next to David.
-Bob would gain 83 happiness units by sitting next to Alice.
-Bob would lose 7 happiness units by sitting next to Carol.
-Bob would lose 63 happiness units by sitting next to David.
-Carol would lose 62 happiness units by sitting next to Alice.
-Carol would gain 60 happiness units by sitting next to Bob.
-Carol would gain 55 happiness units by sitting next to David.
-David would gain 46 happiness units by sitting next to Alice.
-David would lose 7 happiness units by sitting next to Bob.
-David would gain 41 happiness units by sitting next to Carol.
-"""
-            .split(separator: "\n").map({String($0)})
-        
-        testInput.forEach({self.updateGuestInfo(from: $0)})
-        let allPermutations = PermutationHelper.allPermutations(Array(self.guestList))
-        let testResult = allPermutations.map({self.calculateTotalHappiness(for: $0)}).max()!
-        
-        assert(testResult == 330)
-        
-        self.reset()
     }
     
     private func reset() {
@@ -106,4 +80,32 @@ David would gain 41 happiness units by sitting next to Carol.
         }
         self.guestList.insert("Self")
     }
+}
+
+extension Day13VC: TestableDay {
+        func runTests() {
+            let testInput = """
+    Alice would gain 54 happiness units by sitting next to Bob.
+    Alice would lose 79 happiness units by sitting next to Carol.
+    Alice would lose 2 happiness units by sitting next to David.
+    Bob would gain 83 happiness units by sitting next to Alice.
+    Bob would lose 7 happiness units by sitting next to Carol.
+    Bob would lose 63 happiness units by sitting next to David.
+    Carol would lose 62 happiness units by sitting next to Alice.
+    Carol would gain 60 happiness units by sitting next to Bob.
+    Carol would gain 55 happiness units by sitting next to David.
+    David would gain 46 happiness units by sitting next to Alice.
+    David would lose 7 happiness units by sitting next to Bob.
+    David would gain 41 happiness units by sitting next to Carol.
+    """
+                .split(separator: "\n").map({String($0)})
+            
+            testInput.forEach({self.updateGuestInfo(from: $0)})
+            let allPermutations = PermutationHelper.allPermutations(Array(self.guestList))
+            let testResult = allPermutations.map({self.calculateTotalHappiness(for: $0)}).max()!
+            
+            assert(testResult == 330)
+            
+            self.reset()
+        }
 }

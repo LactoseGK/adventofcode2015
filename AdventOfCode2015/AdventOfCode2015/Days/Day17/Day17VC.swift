@@ -8,21 +8,11 @@
 
 import UIKit
 
-class Day17VC: AoCVC, AdventDay {
+class Day17VC: AoCVC, AdventDay, InputLoadable {
     private var input: [String] = []
     
     func loadInput() {
         self.input = self.defaultInputFileString.loadAsTextLines()
-    }
-    
-    func runTests() {
-        let sizes = [20, 15, 10, 5, 5]
-        let storageGoal = 25
-        
-        let allPermutations = PermutationHelper.allCombinations(sizes)
-        let results = allPermutations.map({self.doesPermutationSucceed(permutation: $0, storageGoal: storageGoal)})
-        let filtered = results.filter({$0})
-        assert(filtered.count == 4)
     }
     
     private func doesPermutationSucceed(permutation: [Int], storageGoal: Int) -> Bool {
@@ -54,5 +44,17 @@ class Day17VC: AoCVC, AdventDay {
         let minimumContainerAmount = solutionDictionary.keys.min()!
         let numSolutions = solutionDictionary[minimumContainerAmount]!
         self.setSolution(challenge: 1, text: "\(numSolutions)")
+    }
+}
+
+extension Day17VC: TestableDay {
+    func runTests() {
+        let sizes = [20, 15, 10, 5, 5]
+        let storageGoal = 25
+        
+        let allPermutations = PermutationHelper.allCombinations(sizes)
+        let results = allPermutations.map({self.doesPermutationSucceed(permutation: $0, storageGoal: storageGoal)})
+        let filtered = results.filter({$0})
+        assert(filtered.count == 4)
     }
 }

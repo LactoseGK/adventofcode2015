@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Day09VC: AoCVC, AdventDay {
+class Day09VC: AoCVC, AdventDay, InputLoadable {
     
     private var input: [String] = []
     private var locations: Set<String> = []
@@ -17,21 +17,6 @@ class Day09VC: AoCVC, AdventDay {
     
     func loadInput() {
         self.input = self.defaultInputFileString.loadAsTextLines()
-    }
-    
-    func runTests() {
-        let testInput = ["London to Dublin = 464",
-                         "London to Belfast = 518",
-                         "Dublin to Belfast = 141"]
-        
-        self.generatePaths(from: testInput)
-        let permutations = PermutationHelper.allPermutations(Array(self.locations))
-        let result = TravellingSalesmanHelper.findDistances(locationPermutations: permutations, distanceMap: self.distances)
-        assert(result.shortestDistance == 605)
-        assert(result.longestDistance == 982)
-        
-        self.locations = []
-        self.distances = [:]
     }
     
     private func generatePaths(from strings: [String]) {
@@ -61,5 +46,22 @@ class Day09VC: AoCVC, AdventDay {
         let result = TravellingSalesmanHelper.findLongestDistance(locationPermutations: permutations, distanceMap: self.distances)
         let longestDistance = result.longestDistance!
         self.setSolution(challenge: 1, text: "\(longestDistance)")
+    }
+}
+
+extension Day09VC: TestableDay {
+    func runTests() {
+        let testInput = ["London to Dublin = 464",
+                         "London to Belfast = 518",
+                         "Dublin to Belfast = 141"]
+        
+        self.generatePaths(from: testInput)
+        let permutations = PermutationHelper.allPermutations(Array(self.locations))
+        let result = TravellingSalesmanHelper.findDistances(locationPermutations: permutations, distanceMap: self.distances)
+        assert(result.shortestDistance == 605)
+        assert(result.longestDistance == 982)
+        
+        self.locations = []
+        self.distances = [:]
     }
 }

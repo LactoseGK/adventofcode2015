@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Day16VC: AoCVC, AdventDay {
+class Day16VC: AoCVC, AdventDay, InputLoadable {
     private typealias Belongings = [String : Int] //Name --> Amount
     private typealias IntPredicate = (Int, Int) -> Bool
     private typealias MeasureAdjustments = [String : IntPredicate]
@@ -51,10 +51,6 @@ class Day16VC: AoCVC, AdventDay {
     
     func loadInput() {
         self.input = self.defaultInputFileString.loadAsTextLines()
-    }
-    
-    func runTests() {
-        
     }
     
     private var knownBelongings: Belongings {

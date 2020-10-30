@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Day15VC: AoCVC, AdventDay {
+class Day15VC: AoCVC, AdventDay, InputLoadable {
     struct Ingredient: Hashable {
         let name: String
         let capacity: Int
@@ -38,28 +38,6 @@ class Day15VC: AoCVC, AdventDay {
     
     func loadInput() {
         self.input = self.defaultInputFileString.loadAsTextLines()
-    }
-    
-    func runTests() {
-        let testInput = """
-Butterscotch: capacity -1, durability -2, flavor 6, texture 3, calories 8
-Cinnamon: capacity 2, durability 3, flavor -2, texture -1, calories 3
-""".split(separator: "\n").map({String($0)})
-        
-        let ingredients = testInput.map({Ingredient.from(string: $0)})
-        let recipe: Recipe = [ingredients[0] : 44,
-                              ingredients[1] : 56]
-        let score = self.calculateScore(for: recipe)
-        
-        assert(score == 62842880)
-        
-        let recipe2: Recipe = [ingredients[0] : 40,
-                               ingredients[1] : 60]
-        
-        let calories = self.calculateCalories(for: recipe2)
-        let score2 = self.calculateScore(for: recipe2)
-        assert(calories == 500)
-        assert(score2 == 57600000)
     }
     
     private func calculateScore(for recipe: Recipe) -> Int {
@@ -124,4 +102,28 @@ Cinnamon: capacity 2, durability 3, flavor -2, texture -1, calories 3
         
         self.setSolution(challenge: 1, text: "\(bestRecipeScore)")
     }
+}
+
+extension Day15VC: TestableDay {
+        func runTests() {
+            let testInput = """
+    Butterscotch: capacity -1, durability -2, flavor 6, texture 3, calories 8
+    Cinnamon: capacity 2, durability 3, flavor -2, texture -1, calories 3
+    """.split(separator: "\n").map({String($0)})
+            
+            let ingredients = testInput.map({Ingredient.from(string: $0)})
+            let recipe: Recipe = [ingredients[0] : 44,
+                                  ingredients[1] : 56]
+            let score = self.calculateScore(for: recipe)
+            
+            assert(score == 62842880)
+            
+            let recipe2: Recipe = [ingredients[0] : 40,
+                                   ingredients[1] : 60]
+            
+            let calories = self.calculateCalories(for: recipe2)
+            let score2 = self.calculateScore(for: recipe2)
+            assert(calories == 500)
+            assert(score2 == 57600000)
+        }
 }

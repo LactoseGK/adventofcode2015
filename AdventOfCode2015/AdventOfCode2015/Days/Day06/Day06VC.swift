@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Day06VC: AoCVC, AdventDay {
+class Day06VC: AoCVC, AdventDay, InputLoadable {
     enum Command {
         case turn_on(minExtents: IntPoint, maxExtents: IntPoint)
         case toggle(minExtents: IntPoint, maxExtents: IntPoint)
@@ -25,29 +25,6 @@ class Day06VC: AoCVC, AdventDay {
             lightGrid2[point] = 0
         }
         self.input = self.defaultInputFileString.loadAsTextLines()
-    }
-    
-    func runTests() {
-        let tests = [
-            "turn on 0,0 through 999,999",
-            "toggle 0,0 through 999,0",
-            "turn off 499,499 through 500,500"
-        ]
-        
-        tests.forEach { (test) in
-            let command = getCommand(for: test)
-            switch command {
-            case .turn_on(let minExtents, let maxExtents):
-                assert(GridInfo(minExtents: minExtents, maxExtents: maxExtents).allPoints.count == 1000 * 1000)
-            case .toggle(let minExtents, let maxExtents):
-                assert(GridInfo(minExtents: minExtents, maxExtents: maxExtents).allPoints.count == 1000)
-            case .turn_off(let minExtents, let maxExtents):
-                let gridInfo = GridInfo(minExtents: minExtents, maxExtents: maxExtents)
-                assert(gridInfo.allPoints.count == 4)
-            }
-        }
-        
-        print("All tests OK.")
     }
     
     private var input: [String] = []
@@ -134,5 +111,29 @@ class Day06VC: AoCVC, AdventDay {
         
         let totalIntensity = self.lightGrid2.values.reduce(0, +)
         self.setSolution(challenge: 1, text: "\(totalIntensity)")
+    }
+}
+
+
+extension Day06VC: TestableDay {
+    func runTests() {
+        let tests = [
+            "turn on 0,0 through 999,999",
+            "toggle 0,0 through 999,0",
+            "turn off 499,499 through 500,500"
+        ]
+        
+        tests.forEach { (test) in
+            let command = getCommand(for: test)
+            switch command {
+            case .turn_on(let minExtents, let maxExtents):
+                assert(GridInfo(minExtents: minExtents, maxExtents: maxExtents).allPoints.count == 1000 * 1000)
+            case .toggle(let minExtents, let maxExtents):
+                assert(GridInfo(minExtents: minExtents, maxExtents: maxExtents).allPoints.count == 1000)
+            case .turn_off(let minExtents, let maxExtents):
+                let gridInfo = GridInfo(minExtents: minExtents, maxExtents: maxExtents)
+                assert(gridInfo.allPoints.count == 4)
+            }
+        }
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Day11VC: AoCVC, AdventDay {
+class Day11VC: AoCVC, AdventDay, InputLoadable {
     private var charToInt: [String : Int] = [:]
     private var intToChar: [Int : String] = [:]
     
@@ -22,22 +22,6 @@ class Day11VC: AoCVC, AdventDay {
             self.charToInt[char] = index
             self.intToChar[index] = char
         }
-    }
-    
-    func runTests() {
-        let testsA = ["xx", "xy", "xz", "ya"].map({self.nextPasswordAttempt(from: $0)})
-        assert(testsA == ["xy", "xz", "ya", "yb"])
-        
-        assert(self.testAscendingCharacters(password: "hijklmmn") == true)
-        assert(self.testIllegalCharacters(password: "hijklmmn") == false)
-        
-        assert(self.testLetterDoubles(password: "abbceffg") == true)
-        assert(self.testAscendingCharacters(password: "abbceffg") == false)
-        
-        assert(self.testLetterDoubles(password: "abbcegjk") == false)
-        
-        assert(self.nextValidPassword(from: "abcdefgh") == "abcdffaa")
-        assert(self.nextValidPassword(from: "ghijklmn") == "ghjaabcc")
     }
     
     private func testAscendingCharacters(password: String) -> Bool {
@@ -151,5 +135,23 @@ class Day11VC: AoCVC, AdventDay {
         let nextPassword = self.nextValidPassword(from: initialPassword)
         let nextNext = self.nextValidPassword(from: nextPassword)
         self.setSolution(challenge: 1, text: nextNext)
+    }
+}
+
+extension Day11VC: TestableDay {
+    func runTests() {
+        let testsA = ["xx", "xy", "xz", "ya"].map({self.nextPasswordAttempt(from: $0)})
+        assert(testsA == ["xy", "xz", "ya", "yb"])
+        
+        assert(self.testAscendingCharacters(password: "hijklmmn") == true)
+        assert(self.testIllegalCharacters(password: "hijklmmn") == false)
+        
+        assert(self.testLetterDoubles(password: "abbceffg") == true)
+        assert(self.testAscendingCharacters(password: "abbceffg") == false)
+        
+        assert(self.testLetterDoubles(password: "abbcegjk") == false)
+        
+        assert(self.nextValidPassword(from: "abcdefgh") == "abcdffaa")
+        assert(self.nextValidPassword(from: "ghijklmn") == "ghjaabcc")
     }
 }

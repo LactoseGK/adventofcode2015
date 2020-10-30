@@ -9,17 +9,6 @@
 import UIKit
 
 class Day10VC: AoCVC, AdventDay {
-    
-    func loadInput() {
-    }
-    
-    func runTests() {
-        let tests = ["211",
-                     "111"]
-        let results = tests.map({self.lookAndSay($0)})
-        assert(results == ["1221", "31"])
-    }
-    
     private func lookAndSay(_ string: String) -> String {
         var newString = ""
         
@@ -59,5 +48,14 @@ class Day10VC: AoCVC, AdventDay {
         }
         
         self.setSolution(challenge: 1, text: "\(result.count)")
+    }
+}
+
+extension Day10VC: TestableDay {
+    func runTests() {
+        let tests = ["211",
+                     "111"]
+        let results = tests.map({self.lookAndSay($0)})
+        assert(results == ["1221", "31"])
     }
 }

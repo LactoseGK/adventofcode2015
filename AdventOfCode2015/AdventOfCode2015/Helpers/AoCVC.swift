@@ -8,10 +8,16 @@
 import UIKit
 
 protocol AdventDay {
-    func loadInput()
-    func runTests()
     func solveFirst()
     func solveSecond()
+}
+
+protocol InputLoadable {
+    func loadInput()
+}
+
+protocol TestableDay {
+    func runTests()
 }
 
 class AoCVC: UIViewController {
@@ -88,15 +94,19 @@ class AoCVC: UIViewController {
     }
     
     private func loadInput() {
-        let loadTime = Date()
-        self.adventDay.loadInput()
-        print("\(self.title!): Input loaded. \(DateHelper.getElapsedTimeString(from: loadTime))")
+        if let inputLoadable = self as? InputLoadable {
+            let loadTime = Date()
+            inputLoadable.loadInput()
+            print("\(self.title!): Input loaded. \(DateHelper.getElapsedTimeString(from: loadTime))")
+        }
     }
     
     private func runTests() {
-        let testTime = Date()
-        self.adventDay.runTests()
-        print("\(self.title!): Tests OK. \(DateHelper.getElapsedTimeString(from: testTime))")
+        if let testableDay = self as? TestableDay {
+            let testTime = Date()
+            testableDay.runTests()
+            print("\(self.title!): Tests OK. \(DateHelper.getElapsedTimeString(from: testTime))")
+        }
     }
 
     func setSolution(challenge: Int, text: String) {

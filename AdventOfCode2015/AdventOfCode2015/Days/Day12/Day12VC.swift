@@ -8,30 +8,11 @@
 
 import UIKit
 
-class Day12VC: AoCVC, AdventDay {
+class Day12VC: AoCVC, AdventDay, InputLoadable {
     private var input: [String] = []
     
     func loadInput() {
         self.input = self.defaultInputFileString.loadAsTextLines()
-    }
-    
-    func runTests() {
-        let tests = [#"[1,2,3]"#,
-                     #"{"a":2,"b":4}"#,
-                     #"[[[3]]]"#,
-                     #"{"a":{"b":4},"c":-1}"#,
-                     #"{"a":[-1,1]}"#,
-                     #"[-1,{"a":1}]"#,
-                     #"[]"#,
-                     #"{}"#]
-        let results = tests.map({self.countValues(in: $0)})
-        assert(results == [6, 6, 3, 3, 0, 0, 0, 0])
-        
-        let tests2 = [#"[1,{"c":"red","b":2},3]"#,
-                      #"{"d":"red","e":[1,2,3,4],"f":5}"#,
-                      #"[1,"red",5]"#]
-        let results2 = tests2.map({self.countValues(in: $0, ignoring: "red")})
-        assert(results2 == [4, 0, 6])
     }
     
     private func countValues(in string: String, ignoring: String? = nil) -> Int {
@@ -65,5 +46,26 @@ class Day12VC: AoCVC, AdventDay {
     func solveSecond() {
         let result = self.input.map({self.countValues(in: $0, ignoring: "red")}).reduce(0, +)
         self.setSolution(challenge: 1, text: "\(result)")
+    }
+}
+
+extension Day12VC: TestableDay {
+    func runTests() {
+        let tests = [#"[1,2,3]"#,
+                     #"{"a":2,"b":4}"#,
+                     #"[[[3]]]"#,
+                     #"{"a":{"b":4},"c":-1}"#,
+                     #"{"a":[-1,1]}"#,
+                     #"[-1,{"a":1}]"#,
+                     #"[]"#,
+                     #"{}"#]
+        let results = tests.map({self.countValues(in: $0)})
+        assert(results == [6, 6, 3, 3, 0, 0, 0, 0])
+        
+        let tests2 = [#"[1,{"c":"red","b":2},3]"#,
+                      #"{"d":"red","e":[1,2,3,4],"f":5}"#,
+                      #"[1,"red",5]"#]
+        let results2 = tests2.map({self.countValues(in: $0, ignoring: "red")})
+        assert(results2 == [4, 0, 6])
     }
 }

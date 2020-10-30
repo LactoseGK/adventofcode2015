@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Day05VC: AoCVC, AdventDay {
+class Day05VC: AoCVC, AdventDay, InputLoadable {
     private var input: [String] = []
     
     func loadInput() {
@@ -19,23 +19,7 @@ class Day05VC: AoCVC, AdventDay {
         case naughty
         case nice
     }
-    
-    func runTests() {
-        assert(self.checkWord("ugknbfddgicrmopn") == .nice)
-        assert(self.checkWord("aaa") == .nice)
-        assert(self.checkWord("jchzalrnumimnmhp") == .naughty)
-        assert(self.checkWord("haegwjzuvuyypxyu") == .naughty)
-        assert(self.checkWord("dvszwmarrgswjxmb") == .naughty)
         
-        
-        assert(self.checkWord2("qjhvhtzxzqqjkmpb") == .nice)
-        assert(self.checkWord2("xxyxx") == .nice)
-        assert(self.checkWord2("uurcxstgmygtbstg") == .naughty)
-        assert(self.checkWord2("ieodomkazucvgmuy") == .naughty)
-    }
-    
-
-    
     private func checkWord(_ string: String) -> WordType {
         let disallowedStrings = ["ab",
                                  "cd",
@@ -116,5 +100,21 @@ class Day05VC: AoCVC, AdventDay {
             }
         }
         return repeatedWithGap ? .nice : .naughty
+    }
+}
+
+extension Day05VC: TestableDay {
+    func runTests() {
+        assert(self.checkWord("ugknbfddgicrmopn") == .nice)
+        assert(self.checkWord("aaa") == .nice)
+        assert(self.checkWord("jchzalrnumimnmhp") == .naughty)
+        assert(self.checkWord("haegwjzuvuyypxyu") == .naughty)
+        assert(self.checkWord("dvszwmarrgswjxmb") == .naughty)
+        
+        
+        assert(self.checkWord2("qjhvhtzxzqqjkmpb") == .nice)
+        assert(self.checkWord2("xxyxx") == .nice)
+        assert(self.checkWord2("uurcxstgmygtbstg") == .naughty)
+        assert(self.checkWord2("ieodomkazucvgmuy") == .naughty)
     }
 }

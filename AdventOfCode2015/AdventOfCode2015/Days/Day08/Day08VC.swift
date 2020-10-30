@@ -8,30 +8,11 @@
 
 import UIKit
 
-class Day08VC: AoCVC, AdventDay {
+class Day08VC: AoCVC, AdventDay, InputLoadable {
     private var input: [String] = []
     
     func loadInput() {
         self.input = self.defaultInputFileString.loadAsTextLines()
-    }
-    
-    func runTests() {
-        let tests = [
-            self.input[1],
-            self.input[10],
-            self.input[281],
-            self.input[19],
-            self.input[64],
-            self.input[59],
-            self.input[150],
-            self.input[20],
-            self.input[70]
-        ]
-        let charsInCode = tests.map({self.countAmountOfCharactersInCode(for: $0)})
-        assert(charsInCode == [6, 11, 3, 11, 27, 7, 35, 21, 36])
-        
-        let charsInString = tests.map({self.countCharactersInString(for: $0)})
-        assert(charsInString == [4, 8, 1, 8, 23, 2, 31, 17, 26])
     }
     
     private func countAmountOfCharactersInCode(for string: String) -> Int {
@@ -88,5 +69,26 @@ class Day08VC: AoCVC, AdventDay {
         let reencodedCharacterCount = self.input.map({self.countReencodedCharacters(for: $0)}).reduce(0, +)
         let result = reencodedCharacterCount - charsInCode
         self.setSolution(challenge: 1, text: "\(result)")
+    }
+}
+
+extension Day08VC: TestableDay {
+    func runTests() {
+        let tests = [
+            self.input[1],
+            self.input[10],
+            self.input[281],
+            self.input[19],
+            self.input[64],
+            self.input[59],
+            self.input[150],
+            self.input[20],
+            self.input[70]
+        ]
+        let charsInCode = tests.map({self.countAmountOfCharactersInCode(for: $0)})
+        assert(charsInCode == [6, 11, 3, 11, 27, 7, 35, 21, 36])
+        
+        let charsInString = tests.map({self.countCharactersInString(for: $0)})
+        assert(charsInString == [4, 8, 1, 8, 23, 2, 31, 17, 26])
     }
 }

@@ -12,14 +12,6 @@ import CryptoKit
 class Day04VC: AoCVC, AdventDay {
     private var input = "yzbqklnj"
     
-    func loadInput() {
-    }
-    
-    func runTests() {
-        assert(self.findFirstMD5(for: "abcdef", strict: false) == 609043)
-        assert(self.findFirstMD5(for: "pqrstuv", strict: false) == 1048970)
-    }
-    
     private func findFirstMD5(for key: String, strict: Bool) -> Int {
         var i = 1
         var hashFound = false
@@ -49,7 +41,6 @@ class Day04VC: AoCVC, AdventDay {
         }.joined()
     }
     
-    
     func solveFirst() {
         let index = self.findFirstMD5(for: self.input, strict: false)
         self.setSolution(challenge: 0, text: "\(index)")
@@ -58,5 +49,12 @@ class Day04VC: AoCVC, AdventDay {
     func solveSecond() {
         let index = self.findFirstMD5(for: self.input, strict: true)
         self.setSolution(challenge: 1, text: "\(index)")
+    }
+}
+
+extension Day04VC: TestableDay {
+    func runTests() {
+        assert(self.findFirstMD5(for: "abcdef", strict: false) == 609043)
+        assert(self.findFirstMD5(for: "pqrstuv", strict: false) == 1048970)
     }
 }

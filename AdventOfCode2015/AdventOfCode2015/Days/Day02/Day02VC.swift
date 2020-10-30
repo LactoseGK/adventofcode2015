@@ -9,7 +9,7 @@
 
 import UIKit
 
-class Day02VC: AoCVC, AdventDay {
+class Day02VC: AoCVC, AdventDay, InputLoadable {
     struct Box {
         let width: Int
         let height: Int
@@ -51,14 +51,6 @@ class Day02VC: AoCVC, AdventDay {
         self.boxes = self.input.map(Box.fromString)
     }
     
-    func runTests() {
-        assert(Box(width: 2, height: 3, length: 4).surfaceAreaWithPadding == 58)
-        assert(Box(width: 1, height: 1, length: 10).surfaceAreaWithPadding == 43)
-        
-        assert(Box(width: 2, height: 3, length: 4).ribbonRequirements == 34)
-        assert(Box(width: 1, height: 1, length: 10).ribbonRequirements == 14)
-    }
-    
     func solveFirst() {
         let totalArea = self.boxes.map({$0.surfaceAreaWithPadding}).reduce(0, +)
         self.setSolution(challenge: 0, text: "\(totalArea)")
@@ -67,5 +59,15 @@ class Day02VC: AoCVC, AdventDay {
     func solveSecond() {
         let totalRibbonLength = self.boxes.map({$0.ribbonRequirements}).reduce(0, +)
         self.setSolution(challenge: 1, text: "\(totalRibbonLength)")
+    }
+}
+
+extension Day02VC: TestableDay {
+    func runTests() {
+        assert(Box(width: 2, height: 3, length: 4).surfaceAreaWithPadding == 58)
+        assert(Box(width: 1, height: 1, length: 10).surfaceAreaWithPadding == 43)
+        
+        assert(Box(width: 2, height: 3, length: 4).ribbonRequirements == 34)
+        assert(Box(width: 1, height: 1, length: 10).ribbonRequirements == 14)
     }
 }

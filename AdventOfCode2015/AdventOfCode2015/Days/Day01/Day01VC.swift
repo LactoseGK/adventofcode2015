@@ -8,23 +8,11 @@
 
 import UIKit
 
-class Day01VC: AoCVC, AdventDay {
+class Day01VC: AoCVC, AdventDay, InputLoadable {
     private var input: String!
     
     func loadInput() {
         self.input = self.defaultInputFileString.loadAsTextFirstLine()
-    }
-    
-    func runTests() {
-        assert(self.calculateFloor(for: "(())") == 0)
-        assert(self.calculateFloor(for: "()()") == 0)
-        assert(self.calculateFloor(for: "(((") == 3)
-        assert(self.calculateFloor(for: "(()(()(") == 3)
-        assert(self.calculateFloor(for: "))(((((") == 3)
-        assert(self.calculateFloor(for: "())") == -1)
-        assert(self.calculateFloor(for: "))(") == -1)
-        assert(self.calculateFloor(for: ")))") == -3)
-        assert(self.calculateFloor(for: ")())())") == -3)
     }
     
     func solveFirst() {
@@ -56,5 +44,20 @@ class Day01VC: AoCVC, AdventDay {
             return -1
         default: return 0
         }
+    }
+}
+
+
+extension Day01VC: TestableDay {
+    func runTests() {
+        assert(self.calculateFloor(for: "(())") == 0)
+        assert(self.calculateFloor(for: "()()") == 0)
+        assert(self.calculateFloor(for: "(((") == 3)
+        assert(self.calculateFloor(for: "(()(()(") == 3)
+        assert(self.calculateFloor(for: "))(((((") == 3)
+        assert(self.calculateFloor(for: "())") == -1)
+        assert(self.calculateFloor(for: "))(") == -1)
+        assert(self.calculateFloor(for: ")))") == -3)
+        assert(self.calculateFloor(for: ")())())") == -3)
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Day07VC: AoCVC, AdventDay {
+class Day07VC: AoCVC, AdventDay, InputLoadable {
     enum Operator {
         case AND(wireA: String, wireB: String)
         case OR(wireA: String, wireB: String)
@@ -28,37 +28,6 @@ class Day07VC: AoCVC, AdventDay {
     
     func loadInput() {
         self.input = self.defaultInputFileString.loadAsTextLines()
-    }
-    
-    func runTests() {
-        let tests = [
-            "123 -> x",
-            "456 -> y",
-            "x AND y -> d",
-            "x OR y -> e",
-            "x LSHIFT 2 -> f",
-            "y RSHIFT 2 -> g",
-            "NOT x -> h",
-            "NOT y -> i"
-        ]
-        
-        let instructions = tests.map({self.parse($0)})
-        let values = ["d", "e", "f", "g", "h", "i", "x", "y"].map({self.evaluate(wire: $0, in: instructions)})
-        self.wires.removeAll()
-        assert(values == [72, 507, 492, 114, 65412, 65079, 123, 456])
-        
-        
-        let tests2 = [
-            "43690 -> d",
-            "21845 -> c",
-            "c AND d -> b",
-            "NOT b -> a"
-        ]
-        
-        let instructions2 = tests2.map({self.parse($0)})
-        let values2 = ["d", "c", "b", "a"].map({self.evaluate(wire: $0, in: instructions2)})
-        self.wires.removeAll()
-        assert(values2 == [43690, 21845, 0, 65535])
     }
     
     private func parse(_ string: String) -> Instruction {
@@ -152,5 +121,39 @@ class Day07VC: AoCVC, AdventDay {
         instructionsPart2.append(Instruction(_operator: .COPY(wire: "\(valueFirstRun)"), destination: "b"))
         let value = self.evaluate(wire: "a", in: instructionsPart2)
         self.setSolution(challenge: 1, text: "\(value)")
+    }
+}
+
+
+extension Day07VC: TestableDay {
+    func runTests() {
+        let tests = [
+            "123 -> x",
+            "456 -> y",
+            "x AND y -> d",
+            "x OR y -> e",
+            "x LSHIFT 2 -> f",
+            "y RSHIFT 2 -> g",
+            "NOT x -> h",
+            "NOT y -> i"
+        ]
+        
+        let instructions = tests.map({self.parse($0)})
+        let values = ["d", "e", "f", "g", "h", "i", "x", "y"].map({self.evaluate(wire: $0, in: instructions)})
+        self.wires.removeAll()
+        assert(values == [72, 507, 492, 114, 65412, 65079, 123, 456])
+        
+        
+        let tests2 = [
+            "43690 -> d",
+            "21845 -> c",
+            "c AND d -> b",
+            "NOT b -> a"
+        ]
+        
+        let instructions2 = tests2.map({self.parse($0)})
+        let values2 = ["d", "c", "b", "a"].map({self.evaluate(wire: $0, in: instructions2)})
+        self.wires.removeAll()
+        assert(values2 == [43690, 21845, 0, 65535])
     }
 }

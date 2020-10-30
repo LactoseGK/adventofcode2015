@@ -20,11 +20,20 @@ class Grid {
         return self.size.y
     }
     
+    lazy var gridPoints: [IntPoint] = {
+        self.size.gridPoints
+    }()
+    
     init(size: IntPoint, values: [GridValue]) {
         guard size.x > 0, size.y > 0 else { fatalError("Invalid grid, size must be non-negative in both axes.") }
         guard size.x * size.y == values.count else { fatalError("Invalid grid, values doesn't match size." )}
         self.size = size
         self.values = values
+    }
+    
+    func updateValues(_ newValues: [GridValue]) {
+        guard newValues.count == self.values.count else { fatalError("Can't change size of grid after creation!") }
+        self.values = newValues
     }
     
     private func getIndex(for position: IntPoint) -> Int? {

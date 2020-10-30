@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Day03VC: AoCVC, AdventDay {
+class Day03VC: AoCVC, AdventDay, InputLoadable {
     private var giftDictionary: [IntPoint : Int] = [:] // Position --> gifts given
     
     private var input: String!
@@ -16,28 +16,6 @@ class Day03VC: AoCVC, AdventDay {
     func loadInput() {
         self.input = self.defaultInputFileString.loadAsTextFirstLine()
     }
-    
-    func runTests() {
-        self.deliverToHouses(directionString: ">")
-        assert(self.giftDictionary.count == 2)
-        
-        self.deliverToHouses(directionString: "^>v<")
-        assert(self.giftDictionary.count == 4)
-        
-        self.deliverToHouses(directionString: "^v^v^v^v^v")
-        assert(self.giftDictionary.count == 2)
-        
-        
-        self.deliverToHouses(directionString: "^v", roboSantaActive: true)
-        assert(self.giftDictionary.count == 3)
-        
-        self.deliverToHouses(directionString: "^>v<", roboSantaActive: true)
-        assert(self.giftDictionary.count == 3)
-        
-        self.deliverToHouses(directionString: "^v^v^v^v^v", roboSantaActive: true)
-        assert(self.giftDictionary.count == 11)
-    }
-    
     
     private func deliverToHouses(directionString: String, roboSantaActive: Bool = false) {
         self.giftDictionary = [:]
@@ -70,5 +48,28 @@ class Day03VC: AoCVC, AdventDay {
     func solveSecond() {
         self.deliverToHouses(directionString: self.input, roboSantaActive: true)
         self.setSolution(challenge: 1, text: "\(self.giftDictionary.count)")
+    }
+}
+
+extension Day03VC: TestableDay {
+    func runTests() {
+        self.deliverToHouses(directionString: ">")
+        assert(self.giftDictionary.count == 2)
+        
+        self.deliverToHouses(directionString: "^>v<")
+        assert(self.giftDictionary.count == 4)
+        
+        self.deliverToHouses(directionString: "^v^v^v^v^v")
+        assert(self.giftDictionary.count == 2)
+        
+        
+        self.deliverToHouses(directionString: "^v", roboSantaActive: true)
+        assert(self.giftDictionary.count == 3)
+        
+        self.deliverToHouses(directionString: "^>v<", roboSantaActive: true)
+        assert(self.giftDictionary.count == 3)
+        
+        self.deliverToHouses(directionString: "^v^v^v^v^v", roboSantaActive: true)
+        assert(self.giftDictionary.count == 11)
     }
 }

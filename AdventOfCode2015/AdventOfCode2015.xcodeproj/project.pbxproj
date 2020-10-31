@@ -63,6 +63,7 @@
 		04B17C49254B9C8000FE3DB5 /* Day17Input.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04B17C48254B9C8000FE3DB5 /* Day17Input.txt */; };
 		04E7509D254CA9AB00C2FF1B /* Day19VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7509C254CA9AB00C2FF1B /* Day19VC.swift */; };
 		04E7509F254DBD2600C2FF1B /* Day19Input.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04E7509E254DBD2600C2FF1B /* Day19Input.txt */; };
+		04E750A2254DD5DF00C2FF1B /* Day20.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E750A1254DD5DF00C2FF1B /* Day20.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -124,6 +125,7 @@
 		04B17C48254B9C8000FE3DB5 /* Day17Input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Day17Input.txt; sourceTree = "<group>"; };
 		04E7509C254CA9AB00C2FF1B /* Day19VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day19VC.swift; sourceTree = "<group>"; };
 		04E7509E254DBD2600C2FF1B /* Day19Input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Day19Input.txt; sourceTree = "<group>"; };
+		04E750A1254DD5DF00C2FF1B /* Day20.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day20.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +224,7 @@
 				04B17C45254B96BA00FE3DB5 /* Day17 */,
 				04104DD4254C908E00097E7C /* Day18 */,
 				04E7509B254CA99900C2FF1B /* Day19 */,
+				04E750A0254DD5D000C2FF1B /* Day20 */,
 			);
 			path = Days;
 			sourceTree = "<group>";
@@ -385,6 +388,14 @@
 			path = Day19;
 			sourceTree = "<group>";
 		};
+		04E750A0254DD5D000C2FF1B /* Day20 */ = {
+			isa = PBXGroup;
+			children = (
+				04E750A1254DD5DF00C2FF1B /* Day20.swift */,
+			);
+			path = Day20;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -500,6 +511,7 @@
 				04B17C03254881DC00FE3DB5 /* Day03VC.swift in Sources */,
 				04B17C33254B62E100FE3DB5 /* Day13VC.swift in Sources */,
 				04B17BE82548739E00FE3DB5 /* IntPoint.swift in Sources */,
+				04E750A2254DD5DF00C2FF1B /* Day20.swift in Sources */,
 				04B17C38254B6B7A00FE3DB5 /* Day14VC.swift in Sources */,
 				04B17BE92548739E00FE3DB5 /* Misc.swift in Sources */,
 				04B17BC52548736200FE3DB5 /* SceneDelegate.swift in Sources */,

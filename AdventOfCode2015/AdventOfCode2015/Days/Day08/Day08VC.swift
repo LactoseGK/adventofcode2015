@@ -12,7 +12,7 @@ class Day08VC: AoCVC, AdventDay, InputLoadable {
     private var input: [String] = []
     
     func loadInput() {
-        self.input = self.defaultInputFileString.loadAsTextLines()
+        self.input = self.defaultInputFileString.loadAsTextStringArray()
     }
     
     private func countAmountOfCharactersInCode(for string: String) -> Int {

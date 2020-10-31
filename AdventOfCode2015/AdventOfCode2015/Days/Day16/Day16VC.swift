@@ -50,7 +50,7 @@ class Day16VC: AoCVC, AdventDay, InputLoadable {
     private var input: [String] = []
     
     func loadInput() {
-        self.input = self.defaultInputFileString.loadAsTextLines()
+        self.input = self.defaultInputFileString.loadAsTextStringArray()
     }
     
     private var knownBelongings: Belongings {

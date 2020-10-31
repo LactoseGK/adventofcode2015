@@ -12,7 +12,7 @@ class Day17VC: AoCVC, AdventDay, InputLoadable {
     private var input: [String] = []
     
     func loadInput() {
-        self.input = self.defaultInputFileString.loadAsTextLines()
+        self.input = self.defaultInputFileString.loadAsTextStringArray()
     }
     
     private func doesPermutationSucceed(permutation: [Int], storageGoal: Int) -> Bool {

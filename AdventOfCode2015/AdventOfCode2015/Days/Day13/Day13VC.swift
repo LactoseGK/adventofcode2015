@@ -15,7 +15,7 @@ class Day13VC: AoCVC, AdventDay, InputLoadable {
     private var guestList: Set<String> = []
     
     func loadInput() {
-        self.input = self.defaultInputFileString.loadAsTextLines()
+        self.input = self.defaultInputFileString.loadAsTextStringArray()
     }
     
     private func reset() {

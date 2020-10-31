@@ -12,12 +12,12 @@ extension String {
         return self.map({"\($0)"})
     }
     
-    func loadAsTextLines(fileType: String? = "txt") -> [String] {
-        return FileLoader.loadTextLines(fileName: self, fileType: fileType)
+    func loadAsTextStringArray(fileType: String? = "txt", separator: String = "\n") -> [String] {
+        return FileLoader.loadText(fileName: self, fileType: fileType).components(separatedBy: separator).filter({!$0.isEmpty})
     }
     
-    func loadAsTextFirstLine(fileType: String? = "txt") -> String {
-        return self.loadAsTextLines(fileType: fileType).first!
+    func loadAsTextString(fileType: String? = "txt") -> String {
+        return FileLoader.loadText(fileName: self, fileType: fileType)
     }
     
     func loadJSON<T: Codable>(fileType: String? = "txt", parseType: T.Type) -> T {
@@ -38,5 +38,21 @@ extension String {
             return intValue != 0
         }
         return nil
+    }
+    
+    func ranges(of searchString: String) -> [Range<Index>] {
+        var ranges: [Range<Index>] = []
+        var startIndex = self.startIndex
+        while startIndex != self.endIndex {
+            let range = startIndex..<self.endIndex
+            if let foundRange = self.range(of: searchString, range: range) {
+                ranges.append(foundRange)
+            } else {
+                break
+            }
+            startIndex = self.index(after: startIndex)
+        }
+        
+        return ranges
     }
 }

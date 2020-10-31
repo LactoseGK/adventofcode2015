@@ -24,7 +24,7 @@ class Day06VC: AoCVC, AdventDay, InputLoadable {
             lightGrid[point] = false
             lightGrid2[point] = 0
         }
-        self.input = self.defaultInputFileString.loadAsTextLines()
+        self.input = self.defaultInputFileString.loadAsTextStringArray()
     }
     
     private var input: [String] = []

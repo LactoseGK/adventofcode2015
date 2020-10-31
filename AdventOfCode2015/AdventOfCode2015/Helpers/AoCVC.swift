@@ -20,6 +20,13 @@ protocol TestableDay {
     func runTests()
 }
 
+extension InputLoadable where Self: UIViewController {
+    // DayXXInput
+    var defaultInputFileString: String {
+        return self.title!.appending("Input").replacingOccurrences(of: " ", with: "")
+    }
+}
+
 class AoCVC: UIViewController {
     private var solutionLabels: [UILabel] = []
     private var solutionButtons: [UIButton] = []
@@ -32,11 +39,6 @@ class AoCVC: UIViewController {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    // DayXXInput
-    var defaultInputFileString: String {
-        return self.title!.appending("Input").replacingOccurrences(of: " ", with: "")
     }
     
     private var adventDay: AdventDay {

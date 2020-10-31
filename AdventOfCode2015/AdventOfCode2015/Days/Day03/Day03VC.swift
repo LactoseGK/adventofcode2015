@@ -14,7 +14,7 @@ class Day03VC: AoCVC, AdventDay, InputLoadable {
     private var input: String!
     
     func loadInput() {
-        self.input = self.defaultInputFileString.loadAsTextFirstLine()
+        self.input = self.defaultInputFileString.loadAsTextString()
     }
     
     private func deliverToHouses(directionString: String, roboSantaActive: Bool = false) {

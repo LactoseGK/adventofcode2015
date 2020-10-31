@@ -12,7 +12,7 @@ class Day12VC: AoCVC, AdventDay, InputLoadable {
     private var input: [String] = []
     
     func loadInput() {
-        self.input = self.defaultInputFileString.loadAsTextLines()
+        self.input = self.defaultInputFileString.loadAsTextStringArray()
     }
     
     private func countValues(in string: String, ignoring: String? = nil) -> Int {

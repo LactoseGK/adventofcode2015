@@ -12,7 +12,7 @@ class Day01VC: AoCVC, AdventDay, InputLoadable {
     private var input: String!
     
     func loadInput() {
-        self.input = self.defaultInputFileString.loadAsTextFirstLine()
+        self.input = self.defaultInputFileString.loadAsTextString()
     }
     
     func solveFirst() {

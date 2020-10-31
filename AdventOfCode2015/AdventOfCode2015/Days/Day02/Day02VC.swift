@@ -47,7 +47,7 @@ class Day02VC: AoCVC, AdventDay, InputLoadable {
     private var boxes: [Box] = []
     
     func loadInput() {
-        self.input = self.defaultInputFileString.loadAsTextLines()
+        self.input = self.defaultInputFileString.loadAsTextStringArray()
         self.boxes = self.input.map(Box.fromString)
     }
     

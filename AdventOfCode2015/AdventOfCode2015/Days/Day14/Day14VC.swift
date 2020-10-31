@@ -46,7 +46,7 @@ class Day14VC: AoCVC, AdventDay, InputLoadable {
     private var input: [String] = []
     
     func loadInput() {
-        self.input = self.defaultInputFileString.loadAsTextLines()
+        self.input = self.defaultInputFileString.loadAsTextStringArray()
     }
     
     private func raceWithScoring(reindeer: [Reindeer], seconds: Int) {

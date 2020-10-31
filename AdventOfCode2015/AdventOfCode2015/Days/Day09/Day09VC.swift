@@ -16,7 +16,7 @@ class Day09VC: AoCVC, AdventDay, InputLoadable {
     
     
     func loadInput() {
-        self.input = self.defaultInputFileString.loadAsTextLines()
+        self.input = self.defaultInputFileString.loadAsTextStringArray()
     }
     
     private func generatePaths(from strings: [String]) {

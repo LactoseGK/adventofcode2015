@@ -65,6 +65,7 @@
 		04E7509F254DBD2600C2FF1B /* Day19Input.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04E7509E254DBD2600C2FF1B /* Day19Input.txt */; };
 		04E750A2254DD5DF00C2FF1B /* Day20.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E750A1254DD5DF00C2FF1B /* Day20.swift */; };
 		04E750A5254DEF5700C2FF1B /* Day21.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E750A4254DEF5700C2FF1B /* Day21.swift */; };
+		04E750A8254EF08700C2FF1B /* Day22VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E750A7254EF08700C2FF1B /* Day22VC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,6 +129,7 @@
 		04E7509E254DBD2600C2FF1B /* Day19Input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Day19Input.txt; sourceTree = "<group>"; };
 		04E750A1254DD5DF00C2FF1B /* Day20.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day20.swift; sourceTree = "<group>"; };
 		04E750A4254DEF5700C2FF1B /* Day21.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day21.swift; sourceTree = "<group>"; };
+		04E750A7254EF08700C2FF1B /* Day22VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day22VC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +230,7 @@
 				04E7509B254CA99900C2FF1B /* Day19 */,
 				04E750A0254DD5D000C2FF1B /* Day20 */,
 				04E750A3254DEF4800C2FF1B /* Day21 */,
+				04E750A6254EF06900C2FF1B /* Day22 */,
 			);
 			path = Days;
 			sourceTree = "<group>";
@@ -407,6 +410,14 @@
 			path = Day21;
 			sourceTree = "<group>";
 		};
+		04E750A6254EF06900C2FF1B /* Day22 */ = {
+			isa = PBXGroup;
+			children = (
+				04E750A7254EF08700C2FF1B /* Day22VC.swift */,
+			);
+			path = Day22;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -505,6 +516,7 @@
 				04B17BD72548738300FE3DB5 /* CalendarViewController.swift in Sources */,
 				04104DD8254C910800097E7C /* Grid.swift in Sources */,
 				04B17BED2548739E00FE3DB5 /* IntImage.swift in Sources */,
+				04E750A8254EF08700C2FF1B /* Day22VC.swift in Sources */,
 				04B17C0B25488D6D00FE3DB5 /* Day05VC.swift in Sources */,
 				04B17BC32548736200FE3DB5 /* AppDelegate.swift in Sources */,
 				04B17C47254B96CE00FE3DB5 /* Day17VC.swift in Sources */,

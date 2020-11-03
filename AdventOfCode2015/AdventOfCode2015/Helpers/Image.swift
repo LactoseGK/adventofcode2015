@@ -1,19 +1,20 @@
 //
-//  IntImage.swift
-//  AdventOfCode2020
+//  Image.swift
+//  AdventOfCode2015
 //
 //  Created by Geir-Kåre S. Wærp on 21/10/2020.
 //
 
 import Foundation
 
-enum Color: Int {
-    case black = 0
-    case white = 1
-    case transparent = 2
+enum Color: String {
+    case black
+    case white
+    case transparent
     
-    var outputString: String? {
-        switch self {
+    static var printClosure: Grid.PrintBlock = { (value) in
+        guard let color = Color(rawValue: value) else { return nil }
+        switch color {
         case .black:
             return " "
         case .white:

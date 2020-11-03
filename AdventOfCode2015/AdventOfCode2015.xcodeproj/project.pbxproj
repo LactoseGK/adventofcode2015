@@ -27,7 +27,7 @@
 		04B17BEA2548739E00FE3DB5 /* FileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B17BDE2548739E00FE3DB5 /* FileLoader.swift */; };
 		04B17BEB2548739E00FE3DB5 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B17BDF2548739E00FE3DB5 /* String+Ext.swift */; };
 		04B17BEC2548739E00FE3DB5 /* AoCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B17BE02548739E00FE3DB5 /* AoCVC.swift */; };
-		04B17BED2548739E00FE3DB5 /* IntImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B17BE12548739E00FE3DB5 /* IntImage.swift */; };
+		04B17BED2548739E00FE3DB5 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B17BE12548739E00FE3DB5 /* Image.swift */; };
 		04B17BEE2548739E00FE3DB5 /* IntAStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B17BE22548739E00FE3DB5 /* IntAStar.swift */; };
 		04B17BEF2548739E00FE3DB5 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B17BE32548739E00FE3DB5 /* DateHelper.swift */; };
 		04B17BF02548739E00FE3DB5 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B17BE42548739E00FE3DB5 /* Node.swift */; };
@@ -96,7 +96,7 @@
 		04B17BDE2548739E00FE3DB5 /* FileLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileLoader.swift; sourceTree = "<group>"; };
 		04B17BDF2548739E00FE3DB5 /* String+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		04B17BE02548739E00FE3DB5 /* AoCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AoCVC.swift; sourceTree = "<group>"; };
-		04B17BE12548739E00FE3DB5 /* IntImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntImage.swift; sourceTree = "<group>"; };
+		04B17BE12548739E00FE3DB5 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		04B17BE22548739E00FE3DB5 /* IntAStar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntAStar.swift; sourceTree = "<group>"; };
 		04B17BE32548739E00FE3DB5 /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		04B17BE42548739E00FE3DB5 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
@@ -229,7 +229,7 @@
 				04B17BDE2548739E00FE3DB5 /* FileLoader.swift */,
 				04B17BDF2548739E00FE3DB5 /* String+Ext.swift */,
 				04B17BE02548739E00FE3DB5 /* AoCVC.swift */,
-				04B17BE12548739E00FE3DB5 /* IntImage.swift */,
+				04B17BE12548739E00FE3DB5 /* Image.swift */,
 				04B17BE22548739E00FE3DB5 /* IntAStar.swift */,
 				04B17BE32548739E00FE3DB5 /* DateHelper.swift */,
 				04B17BE42548739E00FE3DB5 /* Node.swift */,
@@ -559,7 +559,7 @@
 				04B17BD72548738300FE3DB5 /* CalendarViewController.swift in Sources */,
 				04104DD8254C910800097E7C /* Grid.swift in Sources */,
 				04A7291B2550D7D800F44266 /* Day25VC.swift in Sources */,
-				04B17BED2548739E00FE3DB5 /* IntImage.swift in Sources */,
+				04B17BED2548739E00FE3DB5 /* Image.swift in Sources */,
 				04E750A8254EF08700C2FF1B /* Day22VC.swift in Sources */,
 				04B17C0B25488D6D00FE3DB5 /* Day05VC.swift in Sources */,
 				04B17BC32548736200FE3DB5 /* AppDelegate.swift in Sources */,

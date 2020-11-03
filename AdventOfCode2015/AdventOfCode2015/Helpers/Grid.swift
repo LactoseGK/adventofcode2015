@@ -10,6 +10,7 @@ import Foundation
 
 class Grid {
     typealias GridValue = String
+    typealias PrintBlock = (GridValue) -> (String?)
     var size: IntPoint
     var values: [GridValue]
     
@@ -26,7 +27,7 @@ class Grid {
     
     init(size: IntPoint, values: [GridValue]) {
         guard size.x > 0, size.y > 0 else { fatalError("Invalid grid, size must be non-negative in both axes.") }
-        guard size.x * size.y == values.count else { fatalError("Invalid grid, values doesn't match size." )}
+        guard size.x * size.y == values.count else { fatalError("Invalid grid, values doesn't match size." ) }
         self.size = size
         self.values = values
     }
@@ -36,7 +37,7 @@ class Grid {
         self.values = newValues
     }
     
-    private func getIndex(for position: IntPoint) -> Int? {
+    func getIndex(for position: IntPoint) -> Int? {
         guard position.x < self.width, position.x >= 0 else { return nil }
         guard position.y < self.height, position.y >= 0 else { return nil }
         return position.y * self.width + position.x
@@ -56,14 +57,23 @@ class Grid {
         return offsets.compactMap({return self.getValue(at: from + $0)})
     }
     
-    func asText() -> String {
-        var finalText = ""
+    func getValues(matching filter: (Grid.GridValue) -> (Bool)) -> [Grid.GridValue] {
+        return self.values.filter(filter)
+    }
+    
+    private var rawPrintClosure: PrintBlock = { (value) in
+        return value
+    }
+
+    func asText(printClosure: PrintBlock? = nil) -> String {
+        var finalText = "\n"
         for y in 0..<self.height {
             for x in 0..<self.width {
-                if let value = self.getValue(at: IntPoint(x: x, y: y)) {
-                    finalText.append(value)
-                }
-            }
+                let printClosure = printClosure ?? self.rawPrintClosure
+                if let value = self.getValue(at: IntPoint(x: x, y: y)),
+                    let outputString = printClosure(value) {
+                    finalText.append(outputString)
+                }                }
             finalText.append("\n")
         }
         return finalText.trimmingCharacters(in: .whitespacesAndNewlines)

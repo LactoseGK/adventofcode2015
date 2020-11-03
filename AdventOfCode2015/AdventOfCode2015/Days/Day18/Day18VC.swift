@@ -209,6 +209,7 @@ extension Day18VC: TestableDay {
                 values.append(String(char))
             }
         }
+
         let grid = Grid(size: IntPoint(x: width, y: height), values: values)
         assert(grid.asText() == self.initialTestState)
         

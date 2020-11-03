@@ -1,6 +1,6 @@
 //
 //  Node.swift
-//  AdventOfCode2020
+//  AdventOfCode2015
 //
 //  Created by Geir-Kåre S. Wærp on 21/10/2020.
 //

@@ -14,6 +14,7 @@
 		04A7291325508F2B00F44266 /* Day23Input.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04A7291225508F2B00F44266 /* Day23Input.txt */; };
 		04A729162550B9A800F44266 /* Day24VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A729152550B9A800F44266 /* Day24VC.swift */; };
 		04A729182550C2A900F44266 /* Day24Input.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04A729172550C2A900F44266 /* Day24Input.txt */; };
+		04A7291B2550D7D800F44266 /* Day25VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A7291A2550D7D800F44266 /* Day25VC.swift */; };
 		04B17BC32548736200FE3DB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B17BC22548736200FE3DB5 /* AppDelegate.swift */; };
 		04B17BC52548736200FE3DB5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B17BC42548736200FE3DB5 /* SceneDelegate.swift */; };
 		04B17BCA2548736200FE3DB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B17BC82548736200FE3DB5 /* Main.storyboard */; };
@@ -80,6 +81,7 @@
 		04A7291225508F2B00F44266 /* Day23Input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Day23Input.txt; sourceTree = "<group>"; };
 		04A729152550B9A800F44266 /* Day24VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day24VC.swift; sourceTree = "<group>"; };
 		04A729172550C2A900F44266 /* Day24Input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Day24Input.txt; sourceTree = "<group>"; };
+		04A7291A2550D7D800F44266 /* Day25VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day25VC.swift; sourceTree = "<group>"; };
 		04B17BBF2548736200FE3DB5 /* AdventOfCode2015.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdventOfCode2015.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B17BC22548736200FE3DB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04B17BC42548736200FE3DB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -178,6 +180,14 @@
 			path = Day24;
 			sourceTree = "<group>";
 		};
+		04A729192550D7C300F44266 /* Day25 */ = {
+			isa = PBXGroup;
+			children = (
+				04A7291A2550D7D800F44266 /* Day25VC.swift */,
+			);
+			path = Day25;
+			sourceTree = "<group>";
+		};
 		04B17BB62548736200FE3DB5 = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +269,7 @@
 				04E750A6254EF06900C2FF1B /* Day22 */,
 				04A7290F255089AF00F44266 /* Day23 */,
 				04A729142550B99300F44266 /* Day24 */,
+				04A729192550D7C300F44266 /* Day25 */,
 			);
 			path = Days;
 			sourceTree = "<group>";
@@ -547,6 +558,7 @@
 				04A729162550B9A800F44266 /* Day24VC.swift in Sources */,
 				04B17BD72548738300FE3DB5 /* CalendarViewController.swift in Sources */,
 				04104DD8254C910800097E7C /* Grid.swift in Sources */,
+				04A7291B2550D7D800F44266 /* Day25VC.swift in Sources */,
 				04B17BED2548739E00FE3DB5 /* IntImage.swift in Sources */,
 				04E750A8254EF08700C2FF1B /* Day22VC.swift in Sources */,
 				04B17C0B25488D6D00FE3DB5 /* Day05VC.swift in Sources */,
